@@ -2,10 +2,108 @@
  * YOUR CODE HERE *
  ******************/
 
+function onlyVowels(str) {
+let output = '';
+for (const char of str) {
+  const lowerCaseChar = char.toLowerCase();
+  if (
+  lowerCaseChar === 'a' || 
+      lowerCaseChar === 'e' ||
+      lowerCaseChar === 'i' ||
+      lowerCaseChar === 'o' ||
+      lowerCaseChar === 'u' 
+  ) {
+    ouput += char;
+    }
+  }
+  return output;
+}
 
+function crazyCase(str) {
+  let output = '';
+  for (let i = 0; i < str.length; i++) {//for of loop syntax
+    const char = str[i];
+    if (i % 2 === 0) {
+     output += char.toLowerCase(); // [i] could be placed here too at char
+  }
+  else {
+    output += char.toUppercase();// [i] could be placed here too at char
+  }
+}
+  return output;
+}
 
+function titleCase(str) {
+  let output = '';
+  const capitalizeFollowingLetter = true;
+  for (const char of str) {
+    // Ask yourself if it should be capitalized
+    if (capitalizeFollowingLetter) {
+      output += char.toUppercase();
+    }
+    // Ask yourself if it should be lower cased 
+    else {
+      output+= char.toLowerCase();
+    }
+    // code down below determines if the letter will be capitalized or not
+    if (char === ' ') {
+      capitalizeFollowingLetter = true;
+    } else {
+      capitalizeFollowingLetter = false;
+    }
+    // simplification of above if statement:
+    // capitalizeFollowingLetter = char === ' ';
+    }
+    return output;
+  }
 
+  function camelCase(str) {
+    let output = '';
+    let capitalizeFollowingLetter = true;
+    for (const char of str) {
 
+      //To do:
+      // add char to output str unless it's a space
+      if (char !== ' ') {
+        //add to output
+        //output += char;
+        if (capitalizeFollowingLetter) {
+          output += char.toUppercase();
+        } else { 
+          output += char.toLowerCase();
+        }
+      }
+      //To do;
+      // If the char is a space, capitalize following letter
+      // Otherwise lowercase the following letter
+      // Simplification: change to 'else' statement
+
+      if (char === ' ') {
+        capitalizeFollowingLetter = true;
+      } else {
+        capitalizeFollowingLetter = false;
+      }
+    }
+  return output;
+  }
+
+  function crazyCase2ReturnOfCrazyCase(str) {
+    let output = '';
+    const capitalizeFollowingLetter = false;
+    for (const char of str) {
+// add current char to output strong, capitalize or lowercase as appropriate
+      if (capitalizeFollowingLetter) {
+        output += char.toUppercase();
+      } else {
+        output += char.toLowerCase();
+      }
+      // toggle the 'capitalizefollowngletter'
+      if (char !== ' '){
+        capitalizeFollowingLetter = !capitalizeFollowingLetter;
+      }
+    }
+    return output;
+  }
 
 
 
