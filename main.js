@@ -13,7 +13,7 @@ for (const char of str) {
       lowerCaseChar === 'o' ||
       lowerCaseChar === 'u' 
   ) {
-    ouput += char;
+    output += char;
     }
   }
   return output;
@@ -35,11 +35,11 @@ function crazyCase(str) {
 
 function titleCase(str) {
   let output = '';
-  const capitalizeFollowingLetter = true;
+  let capitalizeFollowingLetter = true;
   for (const char of str) {
     // Ask yourself if it should be capitalized
     if (capitalizeFollowingLetter) {
-      output += char.toUppercase();
+      output += char.toUpperCase();
     }
     // Ask yourself if it should be lower cased 
     else {
@@ -53,9 +53,9 @@ function titleCase(str) {
     }
     // simplification of above if statement:
     // capitalizeFollowingLetter = char === ' ';
-    }
-    return output;
   }
+    return output;
+}
 
   function camelCase(str) {
     let output = '';
@@ -68,7 +68,7 @@ function titleCase(str) {
         //add to output
         //output += char;
         if (capitalizeFollowingLetter) {
-          output += char.toUppercase();
+          output += char.toUpperCase();
         } else { 
           output += char.toLowerCase();
         }
@@ -89,23 +89,21 @@ function titleCase(str) {
 
   function crazyCase2ReturnOfCrazyCase(str) {
     let output = '';
-    const capitalizeFollowingLetter = false;
+    let capitalizeFollowingLetter = false;
     for (const char of str) {
 // add current char to output strong, capitalize or lowercase as appropriate
       if (capitalizeFollowingLetter) {
-        output += char.toUppercase();
+        output += char.toUpperCase();
       } else {
         output += char.toLowerCase();
       }
-      // toggle the 'capitalizefollowngletter'
-      if (char !== ' '){
+      // toggle the 'capitalizeFollowingLetter'
+      if (char !== ' ') {
         capitalizeFollowingLetter = !capitalizeFollowingLetter;
       }
     }
     return output;
   }
-
-
 
  /********************************************
  * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
